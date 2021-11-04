@@ -7,26 +7,42 @@ let state ={}
 
 function startGame(){
     let state ={}
-    showTextNode()
+    showTextNode(1)
 }
 
 
 //Shows current option that was picked
-function showTextNode(TextNodeIndex){
+function showTextNode(textNodeIndex) {
+    const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
+    textElement.innerText = textNode.text
+    while (optionButtonsElement.firstChild) {
+      optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+    }
 }
-
 
 function selectOption(option){
 
 }
 const textNodes = [
     {
-        id=1
-        Text: "this is a test"
+        id: 1,
+        text: "this is a test for ur adventure",
+        options:[
+            {
+                text: "this is option 1",
+                SetState:{},
+                nextText:2
+            },
+            {
+                text: 'This is option 2',
+                nextText: 2
+            }
+        ]
+        
+    },
+    {
+        id:2
     }
 ]
-
-
-
 
 startGame()
