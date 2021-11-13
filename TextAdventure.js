@@ -11,18 +11,33 @@ function startGame(){
 }
 
 
-//Shows current option that was picked
 function showTextNode(textNodeIndex) {
     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
     textElement.innerText = textNode.text
     while (optionButtonsElement.firstChild) {
       optionButtonsElement.removeChild(optionButtonsElement.firstChild)
     }
-}
-
+  
+    textNode.options.forEach(option => {
+      if (showOption(option)) {
+        const button = document.createElement('button')
+        button.innerText = option.text
+        button.classList.add('btn')
+        button.addEventListener('click', () => selectOption(option))
+        optionButtonsElement.appendChild(button)
+      }
+    })
+  }
+ 
 function selectOption(option){
-
-}
+    const nextTextNodeId = option.nextText
+    if (nextTextNodeId <= 0) {
+      return startGame()
+    }
+    state = Object.assign(state, option.setState)
+    showTextNode(nextTextNodeId)
+  }
+  
 const textNodes = [
     {
         id: 1,
