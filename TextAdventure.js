@@ -1,50 +1,50 @@
 // Get the text element that we will use to tell the story
 const textElement = document.getElementById("text")
 // Get the buttons we will press for out options
-const optionButtonsElement = document.getElementById("option-buttons")
+const Buttons = document.getElementById("buttons")
 
 let state = {}
 // fuction that starts the game and displays the first text option
-function startGame() {
+function Game() {
   state = {}
   showText(1)
 }
 // fucntion that shows the options 
-function showOption(option) {
+function DisplayButtons(option) {
   return option.requiredState == null || option.requiredState(state)
 }
 // fuction that allows you to select the next option and sets your next state.
 function sltOption(option) {
-  const nextNodeId = option.nextText
-  if (nextNodeId <= 0) {
-    return startGame()
+  const NextTextID = option.nextText
+  if (NextTextID <= 0) {
+    return Game()
   }
   state = Object.assign(state, option.setState)
-  showText(nextNodeId)
+  showText(NextTextID)
 }
 // this is the handler for showing options and changing states in the text adventure and incoprates the other fuctions to do so.
 // this works by finding the frist text ID then going to the next text ID based on the options the player clicked on.
 // each text ID has its own set of options that may lead to another Text ID to continue the game.
-function showText(textNodeIndex) {
-  const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
-// rights the next text based on the current textnode
-  textElement.innerText = textNode.text
+function showText(TextOptIndex) {
+  const text = textPaths.find(TextOpt => TextOpt.id === TextOptIndex)
+// rights the next text based on the current TextOpt
+  textElement.innerText = text.text
 
-  while (optionButtonsElement.firstChild) {
-optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+  while (Buttons.firstChild) {
+Buttons.removeChild(Buttons.firstChild)
   }
 // fills the buttons inner text based on each option that is avalible to choose from depending on the text
-  textNode.options.forEach(option => {
-    if (showOption(option)) {
+  text.options.forEach(option => {
+    if (DisplayButtons(option)) {
       const button = document.createElement('button')
       button.innerText = option.text
       button.classList.add('btn')
       button.addEventListener('click', () => sltOption(option))
-      optionButtonsElement.appendChild(button)
+      Buttons.appendChild(button)
     }
   })
 }
-const textNodes = [
+const textPaths = [
     {
         id: 1,
         text: "this is a test for ur adventure",
@@ -67,4 +67,4 @@ const textNodes = [
     }
 ]
 
-startGame()
+Game()
