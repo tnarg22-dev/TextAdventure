@@ -63,7 +63,18 @@ const textPaths = [
     },
     {
         id:2,
-        text: "this is the next step in the adventure"
+        text: "this is the next step in the adventure",
+        options:[
+          {
+              text: "this is option 1222",
+              SetState:{},
+              nextText:2
+          },
+          {
+              text: 'This is option 2222',
+              nextText: 2
+          }
+      ]
     }
 ]
 
