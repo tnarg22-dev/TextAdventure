@@ -63,7 +63,7 @@ const textPaths = [
     },
     {
         id:2,
-        text: "You went Left, and immediatley smack into the guard who dropped the key. He flashes a grin and keeps walking.",
+        text: "You went Left, and immediately smack into the guard who dropped the key. He flashes a grin and keeps walking.",
         options:[
           {
               text: "You can follow him quietly.",
