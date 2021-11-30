@@ -47,23 +47,23 @@ Buttons.removeChild(Buttons.firstChild)
 const textPaths = [
     {
         id: 1,
-        text: "this is a test for ur adventure",
+        text: "You suddenly wake up in a cold, damp, cell. You see a guard walks by and suddenly the keys drop right in front of your cell. you pick them up and unlock the door. Do you go right or left",
         options:[
             {
-                text: "this is option 1",
+                text: "Go Left",
                 SetState:{},
                 nextText:2
             },
             {
-                text: 'This is option 2',
-                nextText: 2
+                text: 'Go Right',
+                nextText: 3
             }
         ]
         
     },
     {
         id:2,
-        text: "this is the next step in the adventure",
+        text: "You went Left, ",
         options:[
           {
               text: "this is option 1222",
@@ -75,7 +75,22 @@ const textPaths = [
               nextText: 2
           }
       ]
-    }
+    },
+    {
+      id:3,
+      text: "You went Right, ",
+      options:[
+        {
+            text: "this is option 1222",
+            SetState:{},
+            nextText:2
+        },
+        {
+            text: 'This is option 2222',
+            nextText: 2
+        }
+    ]
+  }
 ]
 
 Game()
