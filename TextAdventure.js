@@ -56,7 +56,7 @@ const textPaths = [
             },
             {
                 text: 'Go Right',
-                nextText: 3
+                nextText: 11
             }
         ]
         
@@ -182,6 +182,132 @@ const textPaths = [
         }
     ]
   }
+  ,
+  {
+    id:11,
+    text: "You hear a guard rounding  the corner a head of you, but you see an open cell to your left. ",
+    options:[
+      {
+          text: "Rush Him and take his sword",
+          SetState:{},
+          nextText:12
+      },
+      {
+        text: 'hide under the bed in the empty cell',
+        nextText: 13
+      }
+ 
+  ]
+},
+{
+  id:12,
+  text: "you were surprised to see multiple guards when you rounded the corner. You were stabbed to death.",
+  options:[
+    {
+        text: "Start over",
+        SetState:{},
+        nextText:1
+    },
+   
+ 
+]
+},
+{
+  id:13,
+  text: " You see multiple sets of boots walk pass the cell as you hide under the bed, you realize that there was multiple guards. In the corner of the room opposite side of the room in the corner, you can see a hole. You see that the hole is about big enough for you to fit through. ",
+  options:[
+    {
+        text: "Try to kick open more a bigger hole and squeeze through",
+        SetState:{},
+        nextText:14
+    },
+    {
+      text: "Walk out of the cell and try to find another way.",
+      SetState:{},
+      nextText:15
+  },
+  ]
+},
+{
+  id:14,
+  text: " you were able to squeeze through, you fall a short drop into some bushes.In Front of you, you see the open sea a dock with a few single person sized row boats, you look around and see a watch tower to you left and to your right you see a patrol coming your way.",
+  options:[
+    {
+        text: "Make a break for it and run to the dock",
+        SetState:{},
+        nextText:16
+    },
+    {
+      text: "Hide in wait",
+      SetState:{},
+      nextText:17
+  },
+ 
+  ]
+},
+{
+  id:15,
+  text:"As you round the cornner, you were surprised to see multiple guards when you rounded the corner. You were stabbed to death",
+  options:[
+    {
+        text: " Start over",
+        SetState:{},
+        nextText:1
+    },
+ 
+  ]
+},
+{
+  id:17,
+  text:"you were spotted by the watchtower. Guards rush over and apprehend you.",
+  options:[
+    {
+        text: " Start over",
+        SetState:{},
+        nextText:1
+    },
+ 
+  ]
+},
+{
+id:17,
+text: " you make a break for it, you look back and see guards about to fire arrows at you.",
+options:[
+  {
+      text: "Dodge left",
+      SetState:{},
+      nextText:18
+  },
+  {
+    text: "Dodge Right",
+    SetState:{},
+    nextText:19
+    
+}
+]
+},
+{
+  id:18,
+  text: " You dodge left and were shot with a volley of arrows.",
+  options:[
+    {
+        text: "start over",
+        SetState:{},
+        nextText:1
+    }
+]
+},
+{
+  id:19,
+  text: " You make it to the dock, you grab a row boat and get away!",
+  options:[
+    {
+        text: "You win, Play again?",
+        SetState:{},
+        nextText:1
+    }
+]
+}
 ]
 
 Game()
