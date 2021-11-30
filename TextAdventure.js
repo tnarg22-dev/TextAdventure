@@ -63,19 +63,110 @@ const textPaths = [
     },
     {
         id:2,
-        text: "You went Left, ",
+        text: "You went Left, and immediatley smack into the guard who dropped the key. He flashes a grin and keeps walking.",
         options:[
           {
-              text: "this is option 1222",
+              text: "You can follow him quietly.",
               SetState:{},
-              nextText:2
+              nextText:21
           },
           {
-              text: 'This is option 2222',
-              nextText: 2
+              text: 'You can attempt to knock him out.',
+              nextText: 22
           }
       ]
     },
+    {
+      id:22,
+      text: "The guard easily overpowers you and knocks you out. The last thing you hear is -strange how he didnt just follow me-",
+
+  },
+  {
+    id:21,
+    text: "You see him go through an old wooden door. You follow behind slowly and go through the door also. To your surprise the door opens into a lush forest, or so it appears. As you look closer you see a wizard meditating in the middle of a dead tree stump. Next to him rests a wand",
+    options:[
+      {
+          text: "You tap on the Wizard's shoulder to ask if he can help you.",
+          SetState:{},
+          nextText:23
+      },
+      {
+          text: 'You take the wand and try to use it.',
+          nextText: 24
+      }
+  ]
+},
+{
+  id:23,
+  text: "He opens his eyes, grinning, and responds gently -I am the one who freed you from the cage, you must escape this place. I will send you to safety- The wizard begins an incantation",
+  options:[
+    {
+        text: "You allow the wizard to cast his spell",
+        SetState:{},
+        nextText:25
+    },
+    {
+        text: 'You ask to go to the bathroom first',
+        nextText: 26
+    }
+]
+},
+{
+  id:24,
+  text: "You wave the wand around haphazardly and suddenly find yourself on a sand-dune in a great desert. You stumble aimlessy looking for water until you expire",
+
+},
+{
+  id:25,
+  text: "You suddenly find yourself at home. You allow yourself to breathe a sigh of relief when suddenly youre challenged to a riddle. The wizard dares you to guess his favorite snack -boiled newt- or -fried bat-wings-. -If you guess incorrectly I'll send you back to prison-",
+  options:[
+    {
+        text: "Boiled Newt",
+        SetState:{},
+        nextText:27
+    },
+    {
+        text: 'fried bat-wings',
+        nextText: 28
+    }
+]
+},
+{
+  id:26,
+  text: "You break the wizards concentration and find yourself in the Antartic next to a suspicious looking pile",
+
+},
+{
+  id:28,
+  text: "You have survived the Escape! Choose your reward!",
+  options:[
+    {
+        text: "A fistbump",
+        SetState:{},
+        nextText:29
+    },
+    {
+        text: 'A high-five',
+        nextText: 30
+    }
+]
+},
+{
+  id:27,
+  text: "All of a sudden you are right back in your cell, and there you remain for an undeterminate amount of time",
+
+},
+{
+  id:29,
+  text: "You receive a rightious fist bump",
+
+},
+{
+  id:30,
+  text: "You experience a world-altering high-five",
+
+},
+
     {
       id:3,
       text: "You went Right, ",
